@@ -2,7 +2,7 @@
 import java.util.*;
 public class cyclicShort2 {
     public static void main(String[] args){
-        int [] arry={2,7,9,3,4,6,1,5};
+        int [] arry={2,7,3,4,6,1,5};
         shorting(arry);   // for shorting arry in assending order.
         System.out.println(Arrays.toString(arry));
     }
@@ -11,14 +11,14 @@ public class cyclicShort2 {
         while(i<arry.length)
         {
             index=arry[i]-1;
-            if(arry[i]<arry.length&&arry[i]!=arry[index])  // we can swap here.
+            if(arry[i]!=arry[index])  // we can swap here also.
             swap(arry,i,index);
             else
             i++;
         }
     }
     public static void swap(int[] arry, int i, int index){
-        int temp= arry[i];     //if index not at correct place then we swap it.
+        int temp= arry[i];       //if index not at correct place then we swap it.
         arry[i]=arry[index];
         arry[index]=temp;
     }
