@@ -9,15 +9,14 @@ class Solution {
         {
             product*=arr[i];
             
-            while(product>=k && j<arr.length)
+            while(product>=k && i>=j)
             {
                 product/=arr[j];
                 j++;
             }
             ans += i-j+1;
         }
-        if(ans<0)
-            return 0;
+        
         return ans;
     }
 }
