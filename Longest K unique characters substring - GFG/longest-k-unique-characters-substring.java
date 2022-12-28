@@ -32,11 +32,7 @@ class Solution {
         {
             hs.put(s.charAt(i),hs.getOrDefault(s.charAt(i),0)+1);
             
-            if(hs.size()<k)
-            {
-                i++;
-                continue;
-            }
+          
             if(hs.size()==k)
             {
                 ans=Math.max(ans,i-j+1);
