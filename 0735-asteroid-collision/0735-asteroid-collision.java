@@ -1,9 +1,6 @@
 class Solution {
     public int[] asteroidCollision(int[] arr) {
         
-        if(arr.length==2 && arr[0] == -arr[1])
-            return new int[0];
-            
         Stack<Integer> st=new Stack<>();
         
         for(int i=0;i<arr.length;i++)
@@ -17,14 +14,10 @@ class Solution {
                     st.push(arr[i]); 
                     continue;
                 }
-                if(st.empty()==false && st.peek()<0){
-                    st.push(arr[i]); 
-                    continue;
-                }
                 
                 while(st.empty()==false)
                 {
-                    // if both is -ve
+                        // if both is -ve
                         if(st.peek()< 0 && arr[i]<0){
                             st.push(arr[i]);
                             break;
@@ -38,31 +31,29 @@ class Solution {
                        else if(st.peek()<-arr[i]){
                            st.pop();
                            
-                           if(st.empty()==true){
+                           if(st.empty()==true){ // to handle [10 2 7 -15]
                               st.push(arr[i]);
                               break;}
                        }
+                    
                        else if(st.peek()==-arr[i])
                        {
                            st.pop();
                            break;
                        }
                 }
-                
-                // if(st.empty()==true)
-                //     st.push(arr[i]);
             }
         }
-        
+        // storing answer
         int ans[]=new int[st.size()];
         
         for(int i=0;i<ans.length;i++)
             ans[i]=st.pop();
         
-        reverse(ans);
+        reverse(ans);   // reversing answer
         return ans;
     }
-    // reverse ans array function.
+    // function to reverse array
     public static void reverse(int[] arr)
     {
         int i=0,j=arr.length-1;
