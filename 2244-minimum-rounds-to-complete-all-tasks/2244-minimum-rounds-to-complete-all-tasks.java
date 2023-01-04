@@ -24,6 +24,7 @@ class Solution {
             
             if(a>0)
                 count+=1;
+            // count+=(a+2)/3;     this is also valid.
         }
         return count;
     }
