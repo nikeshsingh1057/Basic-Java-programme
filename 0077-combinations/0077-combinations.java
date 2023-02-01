@@ -9,8 +9,9 @@ class Solution {
     }
     public static void combination(int n,int k,int count,int j,List<List<Integer>> ans,List<Integer> ll)
 	{
-        if(count>k)
-            return;
+        // if(count>k)     // we can remove it also
+        //     return;
+        
 		if(count==k)
 		{
 			ans.add(new ArrayList<>(ll));
