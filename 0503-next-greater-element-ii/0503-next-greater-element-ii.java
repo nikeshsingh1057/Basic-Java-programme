@@ -11,14 +11,14 @@ class Solution {
 			while(!st.isEmpty() && st.peek()<=arr[i%arr.length]) 
 					st.pop();
 			
-			if(i<arr.length) {
+			//if(i<arr.length) {
 				
 				if(!st.isEmpty())
-					ans[i]=st.peek();
+					ans[i%arr.length]=st.peek();
 				
 				else
-					ans[i]=-1;
-			}
+					ans[i%arr.length]=-1;
+			//}
 			
 			st.push(arr[i%arr.length]);     // we are doing here i%arr.length because it will also check for circular array.
 		}
